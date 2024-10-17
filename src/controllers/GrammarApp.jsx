@@ -193,7 +193,9 @@ const GrammarApp = ({ onGrammarUpdate, onInputTypeChange }) => {
 
   return (
     <div>
+      <div  className='center'>
       <h1>Generador de Gramáticas</h1>
+      </div>
       <br></br>
       <br></br>
       {/* Sección de Alertas */}
@@ -207,7 +209,7 @@ const GrammarApp = ({ onGrammarUpdate, onInputTypeChange }) => {
           />
         ))}
       </div>
-      <div className='selecionFormato'>
+      <div className='center manual'>
         <div>
           <label>
             <input
@@ -217,7 +219,7 @@ const GrammarApp = ({ onGrammarUpdate, onInputTypeChange }) => {
               checked={useManualInput}
               onChange={() => handleInputTypeChange(true)}
             />
-            Ingresar gramática manualmente
+            Ingresar manualmente
           </label>
 
           <label>
@@ -228,7 +230,7 @@ const GrammarApp = ({ onGrammarUpdate, onInputTypeChange }) => {
               checked={!useManualInput}
               onChange={() => handleInputTypeChange(false)}
             />
-            Cargar gramática desde archivo
+            Cargar archivo
           </label>
         </div>
       </div>
@@ -238,7 +240,9 @@ const GrammarApp = ({ onGrammarUpdate, onInputTypeChange }) => {
           <div>
             <br></br>
             <br></br>
+            <div className='center manual'>
             <h3>Ingrese las reglas de la gramática:</h3>
+            </div>
             {rules.map((rule, index) => (
               <div key={index} style={{ marginBottom: '10px', display: 'flex', alignItems: 'center' }}>
                 <input
@@ -256,7 +260,7 @@ const GrammarApp = ({ onGrammarUpdate, onInputTypeChange }) => {
                   onChange={(e) => handleRuleChange(index, 'right', e.target.value)}
                   placeholder="Parte derecha"
                   onKeyDown={(e) => handleAddRule(e, index)}
-                  style={{ marginRight: '10px' }}
+                  style={{ marginRight: '5px' }}
                 />
                 <button onClick={() => addNewRule(index)} style={{ marginLeft: '5px' }}>Agregar</button>
                 <button className='eliminar'onClick={() => handleRemoveRule(index)}>Eliminar</button>
