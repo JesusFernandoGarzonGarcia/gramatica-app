@@ -22,7 +22,7 @@ const DerivationTree = ({ grammar }) => {
     } else {
       setParticularPath([]);
     }
-  }, [isValid, generalTree]);
+  }, [isValid, generalTree,inputString]);
 
   const buildGeneralDerivationTree = (grammar, targetString) => {
     const tree = { node: grammar[0]?.left, children: [] };
